@@ -30,6 +30,7 @@ from sanic.request import Request
 from sanic.exceptions import (
     RequestTimeout, PayloadTooLarge, InvalidUsage, ServerError,
     ServiceUnavailable)
+from sanic.taskcontext import task_factory
 
 current_time = None
 
@@ -590,6 +591,8 @@ def serve(host, port, request_handler, error_handler, before_start=None,
         return server_coroutine
 
     trigger_events(before_start, loop)
+
+    loop.set_task_factory(task_factory)
 
     try:
         http_server = loop.run_until_complete(server_coroutine)

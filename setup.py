@@ -33,10 +33,10 @@ with open_local(['README.rst']) as rm:
 setup_kwargs = {
     'name': 'sanic',
     'version': version,
-    'url': 'http://github.com/channelcat/sanic/',
+    'url': 'https://github.com/json007/sanic/',
     'license': 'MIT',
     'author': 'Channel Cat',
-    'author_email': 'channelcat@gmail.com',
+    'author_email': 'zhangxingjun@outlook.com',
     'description': (
         'A microframework based on uvloop, httptools, and learnings of flask'),
     'long_description': long_description,
